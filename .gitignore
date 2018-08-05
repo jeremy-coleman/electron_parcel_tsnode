@@ -1,0 +1,10 @@
+dist
+build
+.cache
+node_modules
+*.log
+
+# coverage files
+.nyc_output
+coverage
+coverage.lcov
