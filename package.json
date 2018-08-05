@@ -7,10 +7,10 @@
     "start": "cross-env NODE_ENV=development npm run dev",
     "dev": "node ./scripts/dev.js",
     "build": "parcel build ./src/client/index.html -d ./build --public-url ./ --no-cache",
-    "tsnode:electron": "cross-env NODE_ENV=development electron -r ts-node/register ./main.ts",
-    "start:electron": "electron .",
+    "tsnode:electron": "cross-env NODE_ENV=development electron -r ts-node/register ./src/desktop/main.ts",
     "prod": "cross-env NODE_ENV=production npm-run-all build",
-     "test": "jest"
+    "start1": "parcel ./src/client/index.html",
+    "test": "jest"
   },
   "dependencies": {
     "bulma": "0.7.1",
@@ -18,6 +18,7 @@
     "react-dom": "16.4.1"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/jest": "latest",
@@ -43,6 +44,10 @@
     "nyc": "12.0.2",
     "parcel-bundler": "1.9.7",
     "ts-node": "7.0.0",
-    "typescript": "3.0.1"
+    "typescript": "3.0.1",
+    "postcss-preset-env": "latest",
+    "postcss-easy-import": "latest",
+    "postcss-csso": "latest",
+    "postcss-discard-duplicates": "latest"
   }
 }
