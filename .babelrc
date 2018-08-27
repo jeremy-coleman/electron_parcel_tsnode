@@ -1,9 +1,4 @@
 {
-  "presets": ["react-app"],
-  "plugins": ["transform-class-properties"],
-  "env": {
-    "test": {
-      "plugins": ["transform-es2015-modules-commonjs", "istanbul"]
-    }
-  }
+  "presets": ["env", "react"],
+  "plugins": ["react-hot-loader/babel", "transform-class-properties"]
 }

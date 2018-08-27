@@ -1,6 +1,6 @@
 
-const { app, BrowserWindow, protocol } = require("electron");
-const path = require("path");
+import { app, BrowserWindow } from 'electron'
+import * as path from 'path'
 
 
 let mainWindow;

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { hot } from 'react-hot-loader'
 
 type Props = {};
 
@@ -12,7 +13,7 @@ const initialState: State = {
   count: 0
 };
 
-export default class App extends React.Component<Props, State> {
+class AppBase extends React.Component<Props, State> {
   state = initialState;
 
   handleClick = () => {
@@ -62,3 +63,9 @@ export default class App extends React.Component<Props, State> {
     );
   }
 }
+
+const App = () => (
+    <AppBase />
+)
+
+export default hot(module)(App)
