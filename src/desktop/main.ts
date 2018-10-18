@@ -13,11 +13,8 @@ function createWindow() {
   });
 
 
-  if (process.env.NODE_ENV === "development") {
-    mainWindow.loadURL("http://localhost:1234");
-  } else {
-    mainWindow.loadURL("file:///" + path.join(__dirname, "./index.html"));
-  }
+  if (process.env.NODE_ENV === "development") {mainWindow.loadURL("http://localhost:1234")} 
+  else {mainWindow.loadURL("file:///" + path.join(__dirname, "./index.html"))}
 
 
   mainWindow.on("closed", function() {
