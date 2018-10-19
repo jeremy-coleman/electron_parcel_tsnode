@@ -21,7 +21,7 @@ async function runServe() {
   const bundler = new Bundler(INDEX_FILE, parcelOptions);
   
   await bundler.serve().then(server => {
-    const child = spawn("npm", ["run tsnode:electron"], {stdio: "inherit", shell: true});
+    const child = spawn("npm", ["run tse"], {stdio: "inherit", shell: true});
     child.on("close", function(code, signal) {
        console.log("child process exited with " + `code ${code} and signal ${signal}`);
       return process.exit();
