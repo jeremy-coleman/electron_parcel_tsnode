@@ -1,8 +1,8 @@
 import * as React from "react";
 import { hot } from 'react-hot-loader'
 import {observer, inject} from 'mobx-react'
-
 import {AppProvider} from './app-provider'
+import {MineSweeper} from './minesweeper'
 
 let AppBase = inject('state')(observer(({state}) => 
       <div>
@@ -25,6 +25,7 @@ let AppBase = inject('state')(observer(({state}) =>
           </div>
           <h1 />
         </section>
+        <MineSweeper rows={16} cols={24} totalBombs={12}/>
       </div>
 ))
 
