@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "allowJs": true,
     "experimentalDecorators": true,
     "lib": ["es2015","dom", "dom.iterable", "esnext"],
     "target": "esnext",
     "jsx": "preserve",
     "skipLibCheck":true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node"
   },
   "include":["src", "types"],
   "exclude":["node_modules"]

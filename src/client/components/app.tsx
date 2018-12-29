@@ -1,57 +1,23 @@
 import * as React from "react";
 import { hot } from 'react-hot-loader'
+import {observer, inject} from 'mobx-react'
 
-type Props = {};
+import {AppProvider} from './app-provider'
 
-type State = {
-  hello: string,
-  count: number
-};
-
-const initialState: State = {
-  hello:"Hello from React! Start editing src/app.js with hot-reloading 'npm run start'",
-  count: 0
-};
-
-class AppBase extends React.Component<Props, State> {
-  state = initialState;
-
-  handleClick = () => {
-    this.setState(({ count }) => ({
-      count: count + 1
-    }));
-  };
-
-  resetCount = () => {
-    this.setState({
-      count: 0
-    });
-  };
-
-
-  multiply(a: number, b: number) {
-    return a * b;
-  }
-
-  render() {
-
-    const c = this.multiply(10, 10);
-    // const d = this.multiply("10", 20); // fails
-
-    return (
+let AppBase = inject('state')(observer(({state}) => 
       <div>
         <section className="hero is-light is-bold">
           <div className="hero-body">
             <div className="container">
               <h1 className="title">Hello from Electron</h1>
-              <p>{this.state.hello}</p>
-              <h2 data-test="counter">{this.state.count}</h2>
+              <p>{state.hello}</p>
+              <h2 data-test="counter">{state.count}</h2>
               
-              <button className="button" data-test="incButton" onClick={this.handleClick}>
+              <button className="button" data-test="incButton" onClick={state.inc}>
                 Inc count
               </button>
               
-              <button className="button" data-test="resetButton" onClick={this.resetCount}>
+              <button className="button" data-test="resetButton" onClick={state.resetCount}>
                 Reset
               </button>
               
@@ -60,12 +26,10 @@ class AppBase extends React.Component<Props, State> {
           <h1 />
         </section>
       </div>
-    );
-  }
-}
+))
 
-const App = () => (
-    <AppBase />
-)
+let App = () => <AppProvider><AppBase/></AppProvider>
+
+//function App = observer(() => (<AppBase />))
 
 export default hot(module)(App)
