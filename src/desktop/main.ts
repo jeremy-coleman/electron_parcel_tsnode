@@ -2,18 +2,22 @@
 import { app, BrowserWindow } from 'electron'
 import * as path from 'path'
 
-
+import {tester} from './tester'
 let mainWindow;
 
-function createWindow() {
 
+const args = process.argv.slice(1);
+let dev = args.some(arg => arg === '--dev');
+
+function createWindow() {
+  tester()
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600
   });
 
 
-  if (process.env.NODE_ENV === "development") {mainWindow.loadURL("http://localhost:1234")} 
+  if (dev) {mainWindow.loadURL("http://localhost:1234")} 
   else {mainWindow.loadURL("file:///" + path.join(__dirname, "./index.html"))}
 
 

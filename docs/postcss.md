@@ -1,4 +1,7 @@
-//var purgecss = require('@fullhuman/postcss-purgecss')
+this is ideal for prod, but not worth dealing with while dev'ing
+
+```js
+var purgecss = require('@fullhuman/postcss-purgecss')
 //const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
@@ -7,6 +10,9 @@ module.exports = {
         require('postcss-easy-import'),
         require('postcss-url')({url: "inline"}),
         require('postcss-svgo')(),
+        //doesnt work with parcel because of singleton imports
+        //purgecss({content: ["src/client/**/*.html", "src/client/**/*.tsx", "src/client/**/*.ts"]}),
         require('postcss-csso')({ restructure: true })
     ]
 };
+```
