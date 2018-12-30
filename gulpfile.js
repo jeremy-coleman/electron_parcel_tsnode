@@ -44,7 +44,32 @@ async function runServe() {
 
 }
 
+const parcelProduction = {
+  cache: false,
+  outDir: 'dist/client',
+  minify: true,
+  //scopeHoist: true,
+  publicUrl: ".",
+  watch: false,
+  hmr: false,
+  //target: 'electron'
+};
+
+async function runProduction() {
+  const bundler = new Bundler(INDEX_FILE, parcelProduction);
+  await bundler.bundle().then(server => {
+    const child = spawn(electron, ["."], {stdio: "inherit", shell: true});
+    child.on("close", function(code, signal) {
+       console.log("child process exited with " + `code ${code} and signal ${signal}`);
+      return process.exit();
+    });
+  })
+}
+
+
 
 gulp.task('run-serve', runServe)
 
 gulp.task('start', gulp.parallel(['tsc:desktop', 'run-serve']))
+
+gulp.task('dist', gulp.parallel(['tsc:desktop', runProduction]))

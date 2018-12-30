@@ -18,7 +18,7 @@ function createWindow() {
 
 
   if (dev) {mainWindow.loadURL("http://localhost:1234")} 
-  else {mainWindow.loadURL("file:///" + path.join(__dirname, "./index.html"))}
+  else {mainWindow.loadURL("file:///" + path.join(__dirname, "..", "client/index.html"))}
 
 
   mainWindow.on("closed", function() {
