@@ -13,12 +13,16 @@ function createWindow() {
   tester()
   mainWindow = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    webPreferences:{
+      webSecurity: false
+    }
   });
 
 
   if (dev) {mainWindow.loadURL("http://localhost:1234")} 
-  else {mainWindow.loadURL("file:///" + path.join(__dirname, "./index.html"))}
+  //else {mainWindow.loadURL("file:///" + path.join(__dirname, "..", "client/index.html"))}
+  else {mainWindow.loadFile(path.join(app.getAppPath(), "dist/client/index.html"))}
 
 
   mainWindow.on("closed", function() {

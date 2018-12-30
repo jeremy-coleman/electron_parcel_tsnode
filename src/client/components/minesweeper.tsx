@@ -1,7 +1,4 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-
-
 
 const TIMER_INTERVAL_MS = 10
 

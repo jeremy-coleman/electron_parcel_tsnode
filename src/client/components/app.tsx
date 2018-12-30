@@ -1,5 +1,5 @@
 import * as React from "react";
-import { hot } from 'react-hot-loader'
+//import { hot } from 'react-hot-loader'
 import {observer, inject} from 'mobx-react'
 import {AppProvider} from './app-provider'
 import {MineSweeper} from './minesweeper'
@@ -33,4 +33,5 @@ let App = () => <AppProvider><AppBase/></AppProvider>
 
 //function App = observer(() => (<AppBase />))
 
-export default hot(module)(App)
+export default App
+//export default hot(module)(App)
