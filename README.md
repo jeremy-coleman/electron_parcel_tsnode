@@ -1,5 +1,6 @@
 #what this is
-some good boilerplate
+-some good boilerplate
+-parcel on the front for hmr ease
 
 #some notes
 1) react hmr docs lie - it doesn't remove itself when NODE_ENV=production
