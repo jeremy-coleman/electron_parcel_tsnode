@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import './styles.css'
+import './glob.css'
 
 const root = document.getElementById("root");
 
@@ -12,9 +12,5 @@ function renderApp() {
 
 renderApp()
 
-if(module["hot"]) {
-    module["hot"].accept(renderApp)
-}
-
 //@ts-ignore
-//module.hot.accept(renderApp)
+module.hot.accept(renderApp)

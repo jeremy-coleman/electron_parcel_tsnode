@@ -1,0 +1,15 @@
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+
+import App from './components/app'
+import './glob.css'
+
+const root = document.getElementById("root");
+
+
+ReactDOM.render(<App />, root)
+
+
+if(module["hot"]){
+  module["hot"].accept()
+}

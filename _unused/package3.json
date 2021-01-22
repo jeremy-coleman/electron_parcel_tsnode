@@ -21,14 +21,25 @@
     "when-switch": "^0.3.1"
   },
   "devDependencies": {
+    "@babel/core": "7.12.10",
+    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/plugin-proposal-decorators": "7.12.12",
+    "@babel/plugin-proposal-pipeline-operator": "7.12.1",
+    "@babel/plugin-transform-react-jsx": "7.12.12",
+    "@babel/plugin-transform-typescript": "7.12.1",
+    "@hot-loader/react-dom": "17.0.1",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "babel-plugin-module-resolver": "^4.1.0",
     "electron": "11.2.0",
     "electron-rebuild": "2.3.4",
     "gulp": "4.0.2",
     "gulp-rollup": "2.17.0",
     "gulp-typescript": "6.0.0-alpha.1",
-    "parcel": "1.12.4",
+    "parcel": "^2.0.0-nightly.548",
+    "postcss": "^8.2.4",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
     "rollup-plugin-auto-external": "2.0.0",
     "typescript": "4.1.3"
   }
