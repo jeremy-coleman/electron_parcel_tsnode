@@ -6,30 +6,30 @@
   "scripts": {
     "start": "gulp start",
     "rebuild": "electron-rebuild",
-    "force:rebuild": "npm rebuild --runtime=electron --target=11.2.0 --disturl=https://atom.io/download/atom-shell --abi=64",
+    "force:rebuild": "npm rebuild --runtime=electron --target=13.1.8 --disturl=https://atom.io/download/atom-shell --abi=64",
     "prod": "cross-env NODE_ENV=production parcel build src/client/index.html",
     "dist": "cross-env NODE_ENV=production gulp dist",
     "test": "jest"
   },
   "dependencies": {
-    "bulma": "0.9.1",
-    "mobx": "^6.0.4",
-    "mobx-react": "^7.0.5",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "tslib": "2.1.0",
+    "bulma": "0.9.3",
+    "mobx": "^6.3.2",
+    "mobx-react": "^7.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tslib": "2.3.0",
     "when-switch": "^0.3.1"
   },
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "electron": "11.2.0",
-    "electron-rebuild": "2.3.4",
+    "electron": "13.1.8",
+    "electron-rebuild": "2.3.5",
     "gulp": "4.0.2",
     "gulp-rollup": "2.17.0",
     "gulp-typescript": "6.0.0-alpha.1",
-    "parcel": "1.12.4",
+    "parcel": "2.0.0-rc.0",
     "rollup-plugin-auto-external": "2.0.0",
-    "typescript": "4.1.3"
+    "typescript": "4.3.5"
   }
 }

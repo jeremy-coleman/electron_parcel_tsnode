@@ -10,3 +10,5 @@ coverage
 coverage.lcov
 yarn.lock
 package-lock.json
+.parcel-cache
+dist

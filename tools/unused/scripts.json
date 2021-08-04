@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "start": "gulp start",
+        "rebuild": "electron-rebuild",
+        "force:rebuild": "npm rebuild --runtime=electron --target=13.1.8 --disturl=https://atom.io/download/atom-shell --abi=64",
+        "prod": "cross-env NODE_ENV=production parcel build src/client/index.html",
+        "dist": "cross-env NODE_ENV=production gulp dist",
+        "test": "jest"
+    }
+}
