@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "electron": "13.1.8",
+    "electron": "22.3.25",
     "electron-rebuild": "2.3.5",
     "gulp": "4.0.2",
     "gulp-rollup": "2.17.0",
